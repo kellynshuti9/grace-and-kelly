@@ -1,17 +1,16 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RideEase - Premium Car Rental</title>
+    <title>Car Rental - Premium Car Rental Service</title>
     <link rel="icon" href="images/logo.svg" type="image/svg+xml">
     <link rel="stylesheet" href="styles.css">
     <style>
         /* Home Page Specific Styles */
         .hero-section {
-            background: var(--dark-blue);
-            color: var(--white);
+            background: linear-gradient(135deg, #000000 0%, #800000 100%);
+            color: var(--light-text);
             padding: 6rem 0;
             text-align: center;
             position: relative;
@@ -46,7 +45,7 @@
 
         .btn {
             padding: 1rem 2rem;
-            border: 2px solid var(--white);
+            border: 2px solid var(--light-text);
             border-radius: 6px;
             font-weight: 600;
             text-decoration: none;
@@ -59,31 +58,31 @@
         }
 
         .btn-primary {
-            background: var(--white);
-            color: var(--dark-blue);
+            background: var(--light-text);
+            color: var(--black);
         }
 
         .btn-primary:hover {
-            background: var(--dark-blue);
-            color: var(--white);
+            background: var(--maroon);
+            color: var(--light-text);
             transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(255, 255, 255, 0.2);
+            box-shadow: 0 8px 25px rgba(128, 0, 0, 0.4);
         }
 
         .btn-secondary {
             background: transparent;
-            color: var(--white);
+            color: var(--light-text);
         }
 
         .btn-secondary:hover {
-            background: var(--white);
-            color: var(--dark-blue);
+            background: var(--light-text);
+            color: var(--black);
             transform: translateY(-2px);
         }
 
         .features-section {
             padding: 5rem 0;
-            background: var(--white);
+            background: var(--dark-bg);
         }
 
         .section-title {
@@ -94,13 +93,13 @@
         .section-title h2 {
             font-size: 2.5rem;
             font-weight: 700;
-            color: var(--dark-blue);
+            color: var(--light-text);
             margin-bottom: 1rem;
         }
 
         .section-title p {
             font-size: 1.125rem;
-            color: var(--dark-blue);
+            color: var(--light-text);
             opacity: 0.8;
             max-width: 600px;
             margin: 0 auto;
@@ -114,10 +113,10 @@
         }
 
         .feature-card {
-            background: var(--white);
+            background: var(--black);
             padding: 2.5rem;
             border-radius: 8px;
-            border: 2px solid var(--dark-blue);
+            border: 2px solid var(--maroon);
             transition: all 0.3s ease;
             text-align: center;
         }
@@ -125,44 +124,44 @@
         .feature-card:hover {
             transform: translateY(-5px);
             box-shadow: var(--shadow-lg);
-            background: var(--dark-blue);
-            color: var(--white);
+            background: var(--maroon);
+            color: var(--light-text);
         }
 
         .feature-card:hover h3,
         .feature-card:hover p {
-            color: var(--white);
+            color: var(--light-text);
         }
 
         .feature-icon {
             width: 70px;
             height: 70px;
-            background: var(--dark-blue);
+            background: var(--maroon);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             margin: 0 auto 1.5rem;
-            color: var(--white);
+            color: var(--light-text);
             font-size: 1.5rem;
             transition: all 0.3s ease;
         }
 
         .feature-card:hover .feature-icon {
-            background: var(--white);
-            color: var(--dark-blue);
+            background: var(--light-text);
+            color: var(--maroon);
         }
 
         .feature-card h3 {
             font-size: 1.25rem;
             font-weight: 600;
             margin-bottom: 1rem;
-            color: var(--dark-blue);
+            color: var(--light-text);
             transition: color 0.3s ease;
         }
 
         .feature-card p {
-            color: var(--dark-blue);
+            color: var(--light-text);
             opacity: 0.8;
             line-height: 1.6;
             transition: color 0.3s ease;
@@ -170,7 +169,7 @@
 
         .cars-section {
             padding: 5rem 0;
-            background: var(--light-gray);
+            background: var(--black);
         }
 
         .cars-grid {
@@ -180,10 +179,10 @@
         }
 
         .car-card {
-            background: var(--white);
+            background: var(--dark-bg);
             border-radius: 8px;
             overflow: hidden;
-            border: 2px solid var(--dark-blue);
+            border: 2px solid var(--maroon);
             transition: all 0.3s ease;
         }
 
@@ -212,13 +211,13 @@
         .car-name {
             font-size: 1.25rem;
             font-weight: 600;
-            color: var(--dark-blue);
+            color: var(--light-text);
         }
 
         .car-price {
             font-size: 1.5rem;
             font-weight: 700;
-            color: var(--dark-blue);
+            color: var(--maroon);
         }
 
         .car-details {
@@ -232,7 +231,7 @@
             display: flex;
             align-items: center;
             gap: 0.5rem;
-            color: var(--dark-blue);
+            color: var(--light-text);
             opacity: 0.8;
             font-size: 0.875rem;
         }
@@ -241,49 +240,6 @@
             text-align: center;
             margin-top: 3rem;
         }
-        .professional-nav {
-    width: 100%;
-    background: white;
-    padding: 15px 0;
-    font-family: "Poppins", sans-serif;
-}
-
-/* ===== CONTAINER ===== */
-.nav-container {
-    max-width: 1300px;
-    margin: auto;
-    padding: 0 40px;
-
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-/* ===== BRAND ===== */
-.nav-brand {
-    display: flex;
-    align-items: center;
-    text-decoration: none;
-}
-
-.nav-logo {
-     width: 140px;   /* Big like your screenshot */
-    height: auto;
-    margin-right: 12px;
-}
-
-.brand-name {
-    font-size: 32px;  /* Bold + big (same as screenshot) */
-    font-weight: 700;
-    color: #06184A;
-    letter-spacing: 1.5px;
-}
-
-.brand-tagline {
-    font-size: 12px;  /* Small tagline, same style */
-    letter-spacing: 1.5px;
-    color: #4D5A80;
-}
     </style>
 </head>
 <body>
@@ -291,10 +247,10 @@
     <nav class="professional-nav">
         <div class="nav-container">
             <a href="home.html" class="nav-brand">
-                <img src="images/logo.svg" alt="RideEase" class="nav-logo">
+                <img src="images/logo.svg" alt="Car Rental" class="nav-logo">
                 <div class="brand-text">
-                    <div class="brand-name">RIDEASE</div>
-                    <div class="brand-tagline">PREMIUM CAR RENTAL</div>
+                    <div class="brand-name">CAR RENTAL</div>
+                    <div class="brand-tagline">PREMIUM CAR RENTAL SERVICE</div>
                 </div>
             </a>
             
@@ -324,7 +280,7 @@
     <section class="features-section">
         <div class="main-container">
             <div class="section-title">
-                <h2>Why Choose RideEase</h2>
+                <h2>Why Choose Us</h2>
                 <p>Discover the difference with our premium car rental service</p>
             </div>
             
@@ -378,7 +334,7 @@
                             <span class="car-detail">👥 5 seats</span>
                             <span class="car-detail">⚡ Automatic</span>
                         </div>
-                        <button onclick="window.location.href='cars.html'" class="btn btn-primary" style="width: 100%; background: var(--dark-blue); color: var(--white); border-color: var(--dark-blue);">View Details</button>
+                        <button onclick="window.location.href='cars.html'" class="btn btn-primary" style="width: 100%; background: var(--maroon); color: var(--light-text); border-color: var(--maroon);">View Details</button>
                     </div>
                 </div>
                 
@@ -395,7 +351,7 @@
                             <span class="car-detail">👥 5 seats</span>
                             <span class="car-detail">⚡ Automatic</span>
                         </div>
-                        <button onclick="window.location.href='cars.html'" class="btn btn-primary" style="width: 100%; background: var(--dark-blue); color: var(--white); border-color: var(--dark-blue);">View Details</button>
+                        <button onclick="window.location.href='cars.html'" class="btn btn-primary" style="width: 100%; background: var(--maroon); color: var(--light-text); border-color: var(--maroon);">View Details</button>
                     </div>
                 </div>
                 
@@ -412,13 +368,13 @@
                             <span class="car-detail">👥 5 seats</span>
                             <span class="car-detail">⚡ Automatic</span>
                         </div>
-                        <button onclick="window.location.href='cars.html'" class="btn btn-primary" style="width: 100%; background: var(--dark-blue); color: var(--white); border-color: var(--dark-blue);">View Details</button>
+                        <button onclick="window.location.href='cars.html'" class="btn btn-primary" style="width: 100%; background: var(--maroon); color: var(--light-text); border-color: var(--maroon);">View Details</button>
                     </div>
                 </div>
             </div>
             
             <div class="view-more">
-                <a href="cars.html" class="btn btn-secondary" style="border-color: var(--dark-blue); color: var(--dark-blue);">View All Vehicles</a>
+                <a href="cars.html" class="btn btn-secondary" style="border-color: var(--maroon); color: var(--maroon);">View All Vehicles</a>
             </div>
         </div>
     </section>
@@ -427,7 +383,7 @@
     <footer class="professional-footer">
         <div class="footer-container">
             <div class="footer-brand">
-                <img src="images/logo.svg" alt="RideEase">
+                <img src="images/logo.svg" alt="Car Rental">
                 <p>Your trusted partner for premium car rentals. Experience excellence in every journey.</p>
                 <div class="footer-social">
                     <a href="#" class="social-icon">f</a>
@@ -460,16 +416,16 @@
             <div class="footer-section">
                 <h3>Contact Info</h3>
                 <div class="footer-contact">
-                    <p>📞 +250794098499-RIDE</p>
-                    <p>✉️ info@ridease.com</p>
-                    <p>📍  KIGALI-RWANDA</p>
+                    <p>📞 +250 794 098 499</p>
+                    <p>✉️ info@carrental.com</p>
+                    <p>📍 Kigali, Rwanda</p>
                     <p>🕒 24/7 Service</p>
                 </div>
             </div>
         </div>
         
         <div class="footer-bottom">
-            <p>&copy; 2025 RideEase. All rights reserved.</p>
+            <p>&copy; 2025 Car Rental. All rights reserved.</p>
         </div>
     </footer>
 

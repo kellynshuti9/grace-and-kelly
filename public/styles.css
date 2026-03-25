@@ -1,12 +1,11 @@
-
-
 :root {
-    --dark-blue: #0b1d51;
-    --white: #ffffff;
-    --light-gray: #f8f9fa;
-    --border: #e2e8f0;
-    --shadow: 0 2px 4px rgba(11, 29, 81, 0.1);
-    --shadow-lg: 0 8px 25px rgba(11, 29, 81, 0.15);
+    --maroon: #800000;
+    --black: #000000;
+    --dark-bg: #0a0a0a;
+    --light-text: #f0f0f0;
+    --gray-border: #2c2c2c;
+    --shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    --shadow-lg: 0 8px 25px rgba(0, 0, 0, 0.4);
 }
 
 * {
@@ -17,19 +16,18 @@
 
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: var(--white);
-    color: var(--dark-blue);
+    background-color: var(--dark-bg);
+    color: var(--light-text);
     line-height: 1.6;
 }
 
-
 .professional-nav {
-    background: var(--white);
+    background: var(--black);
     box-shadow: var(--shadow);
     position: sticky;
     top: 0;
     z-index: 1000;
-    border-bottom: 2px solid var(--dark-blue);
+    border-bottom: 2px solid var(--maroon);
 }
 
 .nav-container {
@@ -52,6 +50,7 @@ body {
 .nav-logo {
     height: 45px;
     width: auto;
+    filter: brightness(0) invert(1);
 }
 
 .brand-text {
@@ -62,13 +61,13 @@ body {
 .brand-name {
     font-size: 28px;
     font-weight: 700;
-    color: var(--dark-blue);
+    color: var(--light-text);
     letter-spacing: -0.5px;
 }
 
 .brand-tagline {
     font-size: 12px;
-    color: var(--dark-blue);
+    color: var(--light-text);
     font-weight: 500;
     letter-spacing: 1px;
     opacity: 0.8;
@@ -84,7 +83,7 @@ body {
 .nav-link {
     padding: 12px 24px;
     text-decoration: none;
-    color: var(--dark-blue);
+    color: var(--light-text);
     font-weight: 500;
     border-radius: 6px;
     transition: all 0.3s ease;
@@ -92,20 +91,20 @@ body {
 }
 
 .nav-link:hover {
-    background: var(--dark-blue);
-    color: var(--white);
+    background: var(--maroon);
+    color: var(--light-text);
 }
 
 .nav-link.active {
-    background: var(--dark-blue);
-    color: var(--white);
+    background: var(--maroon);
+    color: var(--light-text);
 }
 
 .nav-button {
     padding: 12px 28px;
-    background: var(--dark-blue);
-    color: var(--white);
-    border: 2px solid var(--dark-blue);
+    background: var(--maroon);
+    color: var(--light-text);
+    border: 2px solid var(--maroon);
     border-radius: 6px;
     font-weight: 600;
     cursor: pointer;
@@ -115,12 +114,11 @@ body {
 }
 
 .nav-button:hover {
-    background: var(--white);
-    color: var(--dark-blue);
+    background: transparent;
+    color: var(--maroon);
     transform: translateY(-2px);
     box-shadow: var(--shadow-lg);
 }
-
 
 .main-container {
     max-width: 1200px;
@@ -129,11 +127,11 @@ body {
     min-height: calc(100vh - 200px);
 }
 
-
 .professional-footer {
-    background: var(--dark-blue);
-    color: var(--white);
+    background: var(--black);
+    color: var(--light-text);
     padding: 4rem 0 2rem;
+    border-top: 1px solid var(--maroon);
 }
 
 .footer-container {
@@ -152,7 +150,7 @@ body {
 }
 
 .footer-brand p {
-    color: var(--white);
+    color: var(--light-text);
     line-height: 1.6;
     margin-bottom: 1.5rem;
     opacity: 0.9;
@@ -166,12 +164,12 @@ body {
 .social-icon {
     width: 40px;
     height: 40px;
-    background: var(--white);
+    background: var(--maroon);
     border-radius: 6px;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: var(--dark-blue);
+    color: var(--light-text);
     text-decoration: none;
     font-weight: 600;
     transition: all 0.3s ease;
@@ -179,14 +177,18 @@ body {
 
 .social-icon:hover {
     transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(255, 255, 255, 0.2);
+    box-shadow: 0 4px 12px rgba(128, 0, 0, 0.4);
+    background: var(--light-text);
+    color: var(--maroon);
 }
 
 .footer-section h3 {
-    color: var(--white);
+    color: var(--light-text);
     margin-bottom: 1.5rem;
     font-size: 1.2rem;
     font-weight: 600;
+    border-left: 3px solid var(--maroon);
+    padding-left: 0.75rem;
 }
 
 .footer-links {
@@ -198,7 +200,7 @@ body {
 }
 
 .footer-links a {
-    color: var(--white);
+    color: var(--light-text);
     text-decoration: none;
     transition: opacity 0.3s ease;
     opacity: 0.8;
@@ -206,10 +208,11 @@ body {
 
 .footer-links a:hover {
     opacity: 1;
+    color: var(--maroon);
 }
 
 .footer-contact p {
-    color: var(--white);
+    color: var(--light-text);
     margin-bottom: 1rem;
     display: flex;
     align-items: center;
@@ -218,14 +221,13 @@ body {
 }
 
 .footer-bottom {
-    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    border-top: 1px solid var(--gray-border);
     margin-top: 3rem;
     padding-top: 2rem;
     text-align: center;
-    color: var(--white);
+    color: var(--light-text);
     opacity: 0.7;
 }
-
 
 @media (max-width: 768px) {
     .nav-container {
@@ -257,6 +259,16 @@ body {
     }
     
     .footer-social {
+        justify-content: center;
+    }
+    
+    .footer-section h3 {
+        border-left: none;
+        padding-left: 0;
+        text-align: center;
+    }
+    
+    .footer-contact p {
         justify-content: center;
     }
 }

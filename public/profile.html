@@ -1,181 +1,145 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RideEase - My Profile</title>
+    <title>Car Rental - My Profile</title>
     <link rel="stylesheet" href="styles.css">
     <style>
-        body { font-family: Arial, sans-serif; margin: 0; background: #f5f7fa; color: #0b1d51; }
-        .navbar { background: #0b1d51; color: white; display: flex; justify-content: space-between; padding: 15px 40px; align-items: center; }
-        .navbar h2 { margin: 0; }
-        .navbar button { padding: 10px 18px; border: none; border-radius: 5px; background: white; color: #0b1d51; cursor: pointer; margin: 0 5px; }
-        .container { max-width: 1000px; margin: 0 auto; padding: 40px; }
-        .profile-section, .bookings-section { background: white; padding: 30px; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); margin-bottom: 30px; }
-        .form-group { margin-bottom: 20px; }
-        .form-group label { display: block; margin-bottom: 5px; font-weight: bold; }
-        .form-group input { width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 5px; }
-        .btn { padding: 12px 24px; background: #0b1d51; color: white; border: none; border-radius: 5px; cursor: pointer; }
-        .booking-card { border: 1px solid #ddd; padding: 20px; margin: 10px 0; border-radius: 8px; }
-        footer { background: #0b1d51; color: white; padding: 20px; text-align: center; margin-top: 40px; }
-
-             /* ===== NAVBAR ===== */
-.professional-nav {
-    width: 100%;
-    background: white;
-    padding: 15px 0;
-    font-family: "Poppins", sans-serif;
-}
-
-/* ===== CONTAINER ===== */
-.nav-container {
-    max-width: 1300px;
-    margin: auto;
-    padding: 0 40px;
-
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-/* ===== BRAND ===== */
-.nav-brand {
-    display: flex;
-    align-items: center;
-    text-decoration: none;
-}
-
-.nav-logo {
-     width: 140px;   /* Big like your screenshot */
-    height: auto;
-    margin-right: 12px;
-}
-
-.brand-name {
-    font-size: 32px;  /* Bold + big (same as screenshot) */
-    font-weight: 700;
-    color: #06184A;
-    letter-spacing: 1.5px;
-}
-
-.brand-tagline {
-    font-size: 12px;  /* Small tagline, same style */
-    letter-spacing: 1.5px;
-    color: #4D5A80;
-}
-.professional-footer {
-            background: var(--dark-blue);
-            color: var(--white);
-            padding: 3rem 0 1rem;
-            margin-top: 4rem;
+        body { 
+            font-family: Arial, sans-serif; 
+            margin: 0; 
+            background: var(--dark-bg); 
+            color: var(--light-text); 
         }
-
-        .footer-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 2rem;
-            display: grid;
-            grid-template-columns: 2fr 1fr 1fr 1fr;
-            gap: 3rem;
+        
+        .container { 
+            max-width: 1000px; 
+            margin: 0 auto; 
+            padding: 40px; 
         }
-
-        .footer-brand img {
-            height: 40px;
-            width: auto;
-            margin-bottom: 1rem;
+        
+        .profile-section, .bookings-section { 
+            background: var(--black); 
+            padding: 30px; 
+            border-radius: 10px; 
+            box-shadow: 0 2px 10px rgba(0,0,0,0.3); 
+            margin-bottom: 30px;
+            border: 1px solid var(--maroon);
         }
-
-        .footer-brand p {
-            color: rgba(255, 255, 255, 0.8);
-            line-height: 1.6;
-            margin-bottom: 1.5rem;
+        
+        .profile-section h2, .bookings-section h2 {
+            color: var(--light-text);
+            margin-bottom: 20px;
+            border-bottom: 2px solid var(--maroon);
+            padding-bottom: 10px;
         }
-
-        .footer-social {
-            display: flex;
-            gap: 1rem;
+        
+        .form-group { 
+            margin-bottom: 20px; 
         }
-
-        .social-icon {
-            background: var(--white);
-            color: var(--dark-blue);
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-decoration: none;
-            font-weight: bold;
+        
+        .form-group label { 
+            display: block; 
+            margin-bottom: 5px; 
+            font-weight: bold; 
+            color: var(--light-text);
+        }
+        
+        .form-group input { 
+            width: 100%; 
+            padding: 12px; 
+            border: 2px solid var(--maroon); 
+            border-radius: 5px;
+            background: var(--dark-bg);
+            color: var(--light-text);
+        }
+        
+        .form-group input:focus {
+            outline: none;
+            border-color: var(--light-text);
+        }
+        
+        .form-group input[readonly] {
+            background: #2a2a2a;
+            cursor: not-allowed;
+        }
+        
+        .btn { 
+            padding: 12px 24px; 
+            background: var(--maroon); 
+            color: var(--light-text); 
+            border: none; 
+            border-radius: 5px; 
+            cursor: pointer;
+            font-weight: 600;
             transition: all 0.3s ease;
         }
-
-        .social-icon:hover {
+        
+        .btn:hover {
+            background: #a00000;
             transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(255, 255, 255, 0.2);
         }
-
-        .footer-section h3 {
-            color: var(--white);
-            margin-bottom: 1.5rem;
-            font-size: 1.2rem;
-            font-weight: 600;
+        
+        .booking-card { 
+            border: 2px solid var(--maroon); 
+            padding: 20px; 
+            margin: 15px 0; 
+            border-radius: 8px;
+            background: var(--dark-bg);
+            transition: all 0.3s ease;
         }
-
-        .footer-links {
-            list-style: none;
+        
+        .booking-card:hover {
+            transform: translateX(5px);
+            border-color: var(--light-text);
         }
-
-        .footer-links li {
-            margin-bottom: 0.5rem;
+        
+        .booking-card h3 {
+            color: var(--light-text);
+            margin-bottom: 10px;
         }
-
-        .footer-links a {
-            color: rgba(255, 255, 255, 0.8);
-            text-decoration: none;
-            transition: color 0.3s ease;
+        
+        .booking-card p {
+            margin: 8px 0;
+            color: var(--light-text);
         }
-
-        .footer-links a:hover {
-            color: var(--white);
+        
+        .status-confirmed {
+            color: #00ff00;
+            font-weight: bold;
         }
-
-        .footer-contact p {
-            color: rgba(255, 255, 255, 0.8);
-            margin-bottom: 0.5rem;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
+        
+        .status-pending {
+            color: #ffaa00;
+            font-weight: bold;
         }
-
-        .footer-bottom {
-            border-top: 1px solid rgba(255, 255, 255, 0.2);
-            margin-top: 3rem;
-            padding-top: 2rem;
+        
+        .no-bookings {
             text-align: center;
-            color: rgba(255, 255, 255, 0.7);
+            padding: 40px;
+            color: var(--light-text);
+            opacity: 0.7;
         }
-
     </style>
 </head>
 <body>
-   <!-- Professional Navigation -->
+    <!-- Professional Navigation -->
     <nav class="professional-nav">
         <div class="nav-container">
             <a href="home.html" class="nav-brand">
-                <img src="images/logo.svg" alt="RideEase" class="nav-logo">
+                <img src="images/logo.svg" alt="Car Rental" class="nav-logo">
                 <div class="brand-text">
-                    <div class="brand-name">RIDEASE</div>
-                    <div class="brand-tagline">PREMIUM CAR RENTAL</div>
+                    <div class="brand-name">CAR RENTAL</div>
+                    <div class="brand-tagline">PREMIUM CAR RENTAL SERVICE</div>
                 </div>
             </a>
             
             <div class="nav-menu">
-                <a href="home.html" class="nav-link active">Home</a>
+                <a href="home.html" class="nav-link">Home</a>
                 <a href="cars.html" class="nav-link">Browse Cars</a>
                 <a href="contact.html" class="nav-link">Contact</a>
-                <a href="profile.html" class="nav-link">Profile</a>
+                <a href="profile.html" class="nav-link active">Profile</a>
                 <button onclick="logout()" class="nav-button">Logout</button>
             </div>
         </div>
@@ -186,40 +150,42 @@
             <h2>My Profile</h2>
             <form id="profileForm">
                 <div class="form-group">
-                    <label>Name</label>
+                    <label>Full Name</label>
                     <input type="text" id="name" required>
                 </div>
                 <div class="form-group">
-                    <label>Email</label>
+                    <label>Email Address</label>
                     <input type="email" id="email" readonly>
                 </div>
                 <div class="form-group">
-                    <label>Phone</label>
-                    <input type="text" id="phone">
+                    <label>Phone Number</label>
+                    <input type="text" id="phone" placeholder="+250 788 123 456">
                 </div>
                 <div class="form-group">
                     <label>Address</label>
-                    <input type="text" id="address">
+                    <input type="text" id="address" placeholder="Your full address">
                 </div>
                 <div class="form-group">
-                    <label>Driver License</label>
-                    <input type="text" id="licenseNumber">
+                    <label>Driver License Number</label>
+                    <input type="text" id="licenseNumber" placeholder="Enter your driver license number">
                 </div>
                 <button type="submit" class="btn">Update Profile</button>
             </form>
         </div>
 
         <div class="bookings-section">
-            <h2>My Bookings</h2>
-            <div id="bookingsList"></div>
+            <h2>My Booking History</h2>
+            <div id="bookingsList">
+                <div class="loading">Loading your bookings...</div>
+            </div>
         </div>
     </div>
 
-     <!-- Professional Footer -->
+    <!-- Professional Footer -->
     <footer class="professional-footer">
         <div class="footer-container">
             <div class="footer-brand">
-                <img src="images/logo.svg" alt="RideEase">
+                <img src="images/logo.svg" alt="Car Rental">
                 <p>Your trusted partner for premium car rentals. Experience excellence in every journey.</p>
                 <div class="footer-social">
                     <a href="#" class="social-icon">f</a>
@@ -252,155 +218,149 @@
             <div class="footer-section">
                 <h3>Contact Info</h3>
                 <div class="footer-contact">
-                    <p>📞 +250794098499-RIDE</p>
-                    <p>✉️ info@ridease.com</p>
-                    <p>📍  KIGALI-RWANDA</p>
+                    <p>📞 +250 794 098 499</p>
+                    <p>✉️ info@carrental.com</p>
+                    <p>📍 Kigali, Rwanda</p>
                     <p>🕒 24/7 Service</p>
                 </div>
             </div>
         </div>
         
         <div class="footer-bottom">
-            <p>&copy; 2025 RideEase. All rights reserved.</p>
+            <p>&copy; 2025 Car Rental. All rights reserved.</p>
         </div>
     </footer>
 
-<script>
-    
-    const API_URL = window.location.hostname === 'localhost' 
-        ? 'http://localhost:5000' 
-        : window.location.origin;
+    <script>
+        const API_URL = window.location.hostname === 'localhost' 
+            ? 'http://localhost:5000' 
+            : window.location.origin;
 
-    document.addEventListener('DOMContentLoaded', async () => {
-        const token = localStorage.getItem('token'); 
-        if(!token){
+        document.addEventListener('DOMContentLoaded', async () => {
+            const token = localStorage.getItem('token'); 
+            if(!token){
+                window.location.href = 'login.html';
+                return;
+            }
+            
+            await loadUserProfile();
+            await loadUserBookings();
+        });
+
+        async function loadUserProfile() {
+            try {
+                const token = localStorage.getItem('token');
+                const response = await fetch(`${API_URL}/api/users/profile`, {
+                    headers: {
+                        'Authorization': `Bearer ${token}`
+                    }
+                });
+
+                if (!response.ok) {
+                    throw new Error('Failed to load profile');
+                }
+
+                const user = await response.json();
+                
+                document.getElementById('name').value = user.name || '';
+                document.getElementById('email').value = user.email || '';
+                document.getElementById('phone').value = user.phone || '';
+                document.getElementById('address').value = user.address || '';
+                document.getElementById('licenseNumber').value = user.licenseNumber || '';
+
+            } catch (error) {
+                console.error('Error loading profile:', error);
+                alert('Error loading profile data. Please try again.');
+            }
+        }
+
+        async function loadUserBookings() {
+            try {
+                const token = localStorage.getItem('token');
+                const response = await fetch(`${API_URL}/api/bookings/my-bookings`, {
+                    headers: {
+                        'Authorization': `Bearer ${token}`
+                    }
+                });
+
+                if (!response.ok) {
+                    throw new Error('Failed to load bookings');
+                }
+
+                const bookings = await response.json();
+                displayBookings(bookings);
+
+            } catch (error) {
+                console.error('Error loading bookings:', error);
+                document.getElementById('bookingsList').innerHTML = '<div class="no-bookings">Error loading bookings. Please try again.</div>';
+            }
+        }
+
+        function displayBookings(bookings) {
+            const bookingsList = document.getElementById('bookingsList');
+            
+            if (bookings.length === 0) {
+                bookingsList.innerHTML = '<div class="no-bookings">🚗 No bookings found. Start your first rental today!</div>';
+                return;
+            }
+
+            bookingsList.innerHTML = bookings.map(booking => `
+                <div class="booking-card">
+                    <h3>${booking.carId?.name || 'Car'}</h3>
+                    <p><strong>📅 Rental Period:</strong> ${new Date(booking.startDate).toLocaleDateString()} - ${new Date(booking.endDate).toLocaleDateString()}</p>
+                    <p><strong>⏱️ Duration:</strong> ${booking.totalDays} day${booking.totalDays > 1 ? 's' : ''}</p>
+                    <p><strong>💰 Total Price:</strong> $${booking.totalPrice}</p>
+                    <p><strong>📍 Pickup Location:</strong> ${booking.pickupLocation}</p>
+                    <p><strong>📌 Status:</strong> <span class="${booking.status === 'Confirmed' ? 'status-confirmed' : 'status-pending'}">${booking.status || 'Pending'}</span></p>
+                    ${booking.paymentStatus === 'Paid' ? '<p><strong>💳 Payment:</strong> <span class="status-confirmed">Paid</span></p>' : ''}
+                </div>
+            `).join('');
+        }
+
+        document.getElementById('profileForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            try {
+                const token = localStorage.getItem('token');
+                const formData = {
+                    name: document.getElementById('name').value,
+                    phone: document.getElementById('phone').value,
+                    address: document.getElementById('address').value,
+                    licenseNumber: document.getElementById('licenseNumber').value
+                };
+
+                const response = await fetch(`${API_URL}/api/users/profile`, {
+                    method: 'PUT',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': `Bearer ${token}`
+                    },
+                    body: JSON.stringify(formData)
+                });
+
+                const data = await response.json();
+
+                if (response.ok) {
+                    alert('✅ Profile updated successfully!');
+                    await loadUserProfile();
+                } else {
+                    alert('Error updating profile: ' + data.message);
+                }
+
+            } catch (error) {
+                console.error('Error updating profile:', error);
+                alert('Error updating profile. Please try again.');
+            }
+        });
+
+        function logout(){
+            localStorage.removeItem('token');
+            localStorage.removeItem('selectedCarId');
+            localStorage.removeItem('startDate');
+            localStorage.removeItem('endDate');
+            localStorage.removeItem('pickupLocation');
             window.location.href = 'login.html';
-            return;
         }
-        
-       
-        await loadUserProfile();
-        await loadUserBookings();
-    });
-
-  
-    async function loadUserProfile() {
-        try {
-            const token = localStorage.getItem('token');
-            const response = await fetch(`${API_URL}/api/users/profile`, {
-                headers: {
-                    'Authorization': `Bearer ${token}`
-                }
-            });
-
-            if (!response.ok) {
-                throw new Error('Failed to load profile');
-            }
-
-            const user = await response.json();
-            
-            
-            document.getElementById('name').value = user.name || '';
-            document.getElementById('email').value = user.email || '';
-            document.getElementById('phone').value = user.phone || '';
-            document.getElementById('address').value = user.address || '';
-            document.getElementById('licenseNumber').value = user.licenseNumber || '';
-
-        } catch (error) {
-            console.error('Error loading profile:', error);
-            alert('Error loading profile data. Please try again.');
-        }
-    }
-
-   
-    async function loadUserBookings() {
-        try {
-            const token = localStorage.getItem('token');
-            const response = await fetch(`${API_URL}/api/bookings/my-bookings`, {
-                headers: {
-                    'Authorization': `Bearer ${token}`
-                }
-            });
-
-            if (!response.ok) {
-                throw new Error('Failed to load bookings');
-            }
-
-            const bookings = await response.json();
-            displayBookings(bookings);
-
-        } catch (error) {
-            console.error('Error loading bookings:', error);
-            document.getElementById('bookingsList').innerHTML = '<p>Error loading bookings. Please try again.</p>';
-        }
-    }
-
-   
-    function displayBookings(bookings) {
-        const bookingsList = document.getElementById('bookingsList');
-        
-        if (bookings.length === 0) {
-            bookingsList.innerHTML = '<p>No bookings found.</p>';
-            return;
-        }
-
-        bookingsList.innerHTML = bookings.map(booking => `
-            <div class="booking-card">
-                <h3>${booking.carId?.name || 'Car'}</h3>
-                <p><strong>Dates:</strong> ${new Date(booking.startDate).toLocaleDateString()} - ${new Date(booking.endDate).toLocaleDateString()}</p>
-                <p><strong>Duration:</strong> ${booking.totalDays} days</p>
-                <p><strong>Total Price:</strong> $${booking.totalPrice}</p>
-                <p><strong>Status:</strong> <span style="color: ${booking.status === 'Confirmed' ? 'green' : 'orange'}">${booking.status || 'Pending'}</span></p>
-                <p><strong>Pickup:</strong> ${booking.pickupLocation}</p>
-            </div>
-        `).join('');
-    }
-
-   
-    document.getElementById('profileForm').addEventListener('submit', async (e) => {
-        e.preventDefault();
-        
-        try {
-            const token = localStorage.getItem('token');
-            const formData = {
-                name: document.getElementById('name').value,
-                phone: document.getElementById('phone').value,
-                address: document.getElementById('address').value,
-                licenseNumber: document.getElementById('licenseNumber').value
-            };
-
-            const response = await fetch(`${API_URL}/api/users/profile`, {
-                method: 'PUT',
-                headers: {
-                    'Content-Type': 'application/json',
-                    'Authorization': `Bearer ${token}`
-                },
-                body: JSON.stringify(formData)
-            });
-
-            const data = await response.json();
-
-            if (response.ok) {
-                alert('Profile updated successfully!');
-            } else {
-                alert('Error updating profile: ' + data.message);
-            }
-
-        } catch (error) {
-            console.error('Error updating profile:', error);
-            alert('Error updating profile. Please try again.');
-        }
-    });
-
-    
-    function logout(){
-        localStorage.removeItem('token');
-        localStorage.removeItem('selectedCarId');
-        localStorage.removeItem('startDate');
-        localStorage.removeItem('endDate');
-        localStorage.removeItem('pickupLocation');
-        window.location.href = 'login.html';
-    }
-</script>
+    </script>
 </body>
 </html>

@@ -1,17 +1,15 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RideEase - Our Fleet</title>
+    <title>Car Rental - Our Fleet</title>
     <link rel="icon" href="images/logo.svg" type="image/svg+xml">
     <link rel="stylesheet" href="styles.css">
     <style>
-       
         .cars-hero {
-            background: var(--dark-blue);
-            color: var(--white);
+            background: linear-gradient(135deg, #000000 0%, #800000 100%);
+            color: var(--light-text);
             padding: 3rem 0;
             text-align: center;
         }
@@ -34,8 +32,8 @@
         }
 
         .filters-section {
-            background: var(--white);
-            border: 2px solid var(--dark-blue);
+            background: var(--black);
+            border: 2px solid var(--maroon);
             border-radius: 12px;
             padding: 2rem;
             margin-bottom: 3rem;
@@ -45,7 +43,7 @@
         .filters-title {
             font-size: 1.5rem;
             font-weight: 700;
-            color: var(--dark-blue);
+            color: var(--light-text);
             margin-bottom: 1.5rem;
             text-align: center;
         }
@@ -64,22 +62,24 @@
 
         .filter-label {
             font-weight: 600;
-            color: var(--dark-blue);
+            color: var(--light-text);
             margin-bottom: 0.5rem;
         }
 
         .filter-select, .filter-input {
             padding: 1rem;
-            border: 2px solid var(--dark-blue);
+            border: 2px solid var(--maroon);
             border-radius: 6px;
             font-size: 1rem;
-            background: var(--white);
+            background: var(--dark-bg);
+            color: var(--light-text);
             transition: all 0.3s ease;
         }
 
         .filter-select:focus, .filter-input:focus {
             outline: none;
-            box-shadow: 0 0 0 3px rgba(11, 29, 81, 0.1);
+            border-color: var(--light-text);
+            box-shadow: 0 0 0 3px rgba(128, 0, 0, 0.2);
         }
 
         .cars-grid {
@@ -89,8 +89,8 @@
         }
 
         .car-card {
-            background: var(--white);
-            border: 2px solid var(--dark-blue);
+            background: var(--black);
+            border: 2px solid var(--maroon);
             border-radius: 12px;
             overflow: hidden;
             transition: all 0.3s ease;
@@ -100,6 +100,7 @@
         .car-card:hover {
             transform: translateY(-8px);
             box-shadow: var(--shadow-lg);
+            border-color: var(--light-text);
         }
 
         .car-image-container {
@@ -124,8 +125,8 @@
             position: absolute;
             top: 1rem;
             right: 1rem;
-            background: var(--dark-blue);
-            color: var(--white);
+            background: var(--maroon);
+            color: var(--light-text);
             padding: 0.5rem 1rem;
             border-radius: 20px;
             font-size: 0.875rem;
@@ -146,14 +147,14 @@
         .car-name {
             font-size: 1.25rem;
             font-weight: 700;
-            color: var(--dark-blue);
+            color: var(--light-text);
             line-height: 1.3;
         }
 
         .car-price {
             font-size: 1.5rem;
             font-weight: 700;
-            color: var(--dark-blue);
+            color: var(--maroon);
             text-align: right;
         }
 
@@ -169,9 +170,9 @@
             align-items: center;
             gap: 0.5rem;
             padding: 0.5rem;
-            background: var(--light-gray);
+            background: var(--dark-bg);
             border-radius: 6px;
-            color: var(--dark-blue);
+            color: var(--light-text);
             font-size: 0.875rem;
         }
 
@@ -183,8 +184,8 @@
         }
 
         .feature-tag {
-            background: var(--dark-blue);
-            color: var(--white);
+            background: var(--maroon);
+            color: var(--light-text);
             padding: 0.25rem 0.75rem;
             border-radius: 15px;
             font-size: 0.75rem;
@@ -194,9 +195,9 @@
         .book-btn {
             width: 100%;
             padding: 1rem;
-            background: var(--dark-blue);
-            color: var(--white);
-            border: 2px solid var(--dark-blue);
+            background: var(--maroon);
+            color: var(--light-text);
+            border: 2px solid var(--maroon);
             border-radius: 6px;
             font-size: 1rem;
             font-weight: 600;
@@ -205,8 +206,8 @@
         }
 
         .book-btn:hover {
-            background: var(--white);
-            color: var(--dark-blue);
+            background: transparent;
+            color: var(--maroon);
             transform: translateY(-2px);
             box-shadow: var(--shadow);
         }
@@ -214,14 +215,14 @@
         .loading-state {
             text-align: center;
             padding: 4rem 2rem;
-            color: var(--dark-blue);
+            color: var(--light-text);
         }
 
         .loading-spinner {
             width: 40px;
             height: 40px;
-            border: 4px solid var(--light-gray);
-            border-top: 4px solid var(--dark-blue);
+            border: 4px solid var(--dark-bg);
+            border-top: 4px solid var(--maroon);
             border-radius: 50%;
             animation: spin 1s linear infinite;
             margin: 0 auto 1rem;
@@ -235,7 +236,7 @@
         .no-cars {
             text-align: center;
             padding: 4rem 2rem;
-            color: var(--dark-blue);
+            color: var(--light-text);
             grid-column: 1 / -1;
         }
 
@@ -250,13 +251,13 @@
             align-items: center;
             margin-bottom: 2rem;
             padding: 1rem 0;
-            border-bottom: 2px solid var(--dark-blue);
+            border-bottom: 2px solid var(--maroon);
         }
 
         .results-count {
             font-size: 1.125rem;
             font-weight: 600;
-            color: var(--dark-blue);
+            color: var(--light-text);
         }
 
         .sort-options {
@@ -267,7 +268,7 @@
 
         .sort-label {
             font-weight: 600;
-            color: var(--dark-blue);
+            color: var(--light-text);
         }
 
         @media (max-width: 768px) {
@@ -298,54 +299,6 @@
                 text-align: left;
             }
         }
-        /* ===== NAVBAR ===== */
-
-.professional-nav {
-    width: 100%;
-    background: white;
-    padding: 15px 0;
-    font-family: "Poppins", sans-serif;
-}
-
-/* ===== CONTAINER ===== */
-.nav-container {
-    max-width: 1300px;
-    margin: auto;
-    padding: 0 40px;
-
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-/* ===== BRAND ===== */
-.nav-brand {
-    display: flex;
-    align-items: center;
-    text-decoration: none;
-}
-
-.nav-logo {
-     width: 140px;   /* Big like your screenshot */
-    height: auto;
-    margin-right: 12px;
-}
-
-.brand-name {
-    font-size: 32px;  /* Bold + big (same as screenshot) */
-    font-weight: 700;
-    color: #06184A;
-    letter-spacing: 1.5px;
-}
-
-.brand-tagline {
-    font-size: 12px;  /* Small tagline, same style */
-    letter-spacing: 1.5px;
-    color: #4D5A80;
-}
-
-
-
     </style>
 </head>
 <body>
@@ -353,10 +306,10 @@
     <nav class="professional-nav">
         <div class="nav-container">
             <a href="home.html" class="nav-brand">
-                <img src="images/logo.svg" alt="RideEase" class="nav-logo">
+                <img src="images/logo.svg" alt="Car Rental" class="nav-logo">
                 <div class="brand-text">
-                    <div class="brand-name">RIDEASE</div>
-                    <div class="brand-tagline">PREMIUM CAR RENTAL</div>
+                    <div class="brand-name">CAR RENTAL</div>
+                    <div class="brand-tagline">PREMIUM CAR RENTAL SERVICE</div>
                 </div>
             </a>
             
@@ -446,11 +399,11 @@
         </div>
     </div>
 
-       <!-- Professional Footer -->
+    <!-- Professional Footer -->
     <footer class="professional-footer">
         <div class="footer-container">
             <div class="footer-brand">
-                <img src="images/logo.svg" alt="RideEase">
+                <img src="images/logo.svg" alt="Car Rental">
                 <p>Your trusted partner for premium car rentals. Experience excellence in every journey.</p>
                 <div class="footer-social">
                     <a href="#" class="social-icon">f</a>
@@ -483,232 +436,218 @@
             <div class="footer-section">
                 <h3>Contact Info</h3>
                 <div class="footer-contact">
-                    <p>📞 +250794098499-RIDE</p>
-                    <p>✉️ info@ridease.com</p>
-                    <p>📍  KIGALI-RWANDA</p>
+                    <p>📞 +250 794 098 499</p>
+                    <p>✉️ info@carrental.com</p>
+                    <p>📍 Kigali, Rwanda</p>
                     <p>🕒 24/7 Service</p>
                 </div>
             </div>
         </div>
         
         <div class="footer-bottom">
-            <p>&copy; 2025 RideEase. All rights reserved.</p>
+            <p>&copy; 2025 Car Rental. All rights reserved.</p>
         </div>
     </footer>
 
-   <script>
-    
-    const API_URL = window.location.hostname === 'localhost' 
-        ? 'http://localhost:5000' 
-        : window.location.origin;
+    <script>
+        const API_URL = window.location.hostname === 'localhost' 
+            ? 'http://localhost:5000' 
+            : window.location.origin;
 
-    let allCars = [];
-    let isLoading = true;
-    
-    
-    document.addEventListener('DOMContentLoaded', async () => {
-        const token = localStorage.getItem('token');
-        if (!token) {
-            window.location.href = 'login.html';
-            return;
-        }
-        await loadCars();
-    });
-
-    
-    async function loadCars() {
-        try {
-            isLoading = true;
-            showLoading();
-            
-            const response = await fetch(`${API_URL}/api/cars`);
-            if (!response.ok) {
-                throw new Error('Failed to fetch cars');
-            }
-            allCars = await response.json();
-            displayCars(allCars);
-            
-        } catch (error) {
-            console.error('Error loading cars:', error);
-            showError('Error loading cars. Please try again.');
-        } finally {
-            isLoading = false;
-        }
-    }
-
- 
-    function showLoading() {
-        const container = document.getElementById('carsContainer');
-        container.innerHTML = `
-            <div class="loading-state">
-                <div class="loading-spinner"></div>
-                <p>Loading our premium fleet...</p>
-            </div>
-        `;
-    }
-
-    
-    function showError(message) {
-        const container = document.getElementById('carsContainer');
-        container.innerHTML = `
-            <div class="no-cars">
-                <div class="no-cars-icon">🚗</div>
-                <h3>Unable to Load Cars</h3>
-                <p>${message}</p>
-                <button onclick="loadCars()" class="book-btn" style="margin-top: 1rem;">Try Again</button>
-            </div>
-        `;
-    }
-
-   
-    function displayCars(cars) {
-        const container = document.getElementById('carsContainer');
-        const resultsCount = document.getElementById('resultsCount');
+        let allCars = [];
+        let isLoading = true;
         
-        if (cars.length === 0) {
+        document.addEventListener('DOMContentLoaded', async () => {
+            const token = localStorage.getItem('token');
+            if (!token) {
+                window.location.href = 'login.html';
+                return;
+            }
+            await loadCars();
+        });
+
+        async function loadCars() {
+            try {
+                isLoading = true;
+                showLoading();
+                
+                const response = await fetch(`${API_URL}/api/cars`);
+                if (!response.ok) {
+                    throw new Error('Failed to fetch cars');
+                }
+                allCars = await response.json();
+                displayCars(allCars);
+                
+            } catch (error) {
+                console.error('Error loading cars:', error);
+                showError('Error loading cars. Please try again.');
+            } finally {
+                isLoading = false;
+            }
+        }
+
+        function showLoading() {
+            const container = document.getElementById('carsContainer');
             container.innerHTML = `
-                <div class="no-cars">
-                    <div class="no-cars-icon">🔍</div>
-                    <h3>No Cars Found</h3>
-                    <p>No vehicles match your current filters. Try adjusting your search criteria.</p>
+                <div class="loading-state">
+                    <div class="loading-spinner"></div>
+                    <p>Loading our premium fleet...</p>
                 </div>
             `;
-            resultsCount.textContent = '0 cars found';
-            return;
         }
 
-        resultsCount.textContent = `${cars.length} car${cars.length !== 1 ? 's' : ''} available`;
-
-        container.innerHTML = cars.map(car => `
-            <div class="car-card">
-                <div class="car-image-container">
-                    <img src="${car.image}" alt="${car.name}" class="car-image"
-                         onerror="this.src='https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?w=400&h=250&fit=crop'">
-                    <div class="car-badge">${car.type}</div>
+        function showError(message) {
+            const container = document.getElementById('carsContainer');
+            container.innerHTML = `
+                <div class="no-cars">
+                    <div class="no-cars-icon">🚗</div>
+                    <h3>Unable to Load Cars</h3>
+                    <p>${message}</p>
+                    <button onclick="loadCars()" class="book-btn" style="margin-top: 1rem;">Try Again</button>
                 </div>
+            `;
+        }
+
+        function displayCars(cars) {
+            const container = document.getElementById('carsContainer');
+            const resultsCount = document.getElementById('resultsCount');
+            
+            if (cars.length === 0) {
+                container.innerHTML = `
+                    <div class="no-cars">
+                        <div class="no-cars-icon">🔍</div>
+                        <h3>No Cars Found</h3>
+                        <p>No vehicles match your current filters. Try adjusting your search criteria.</p>
+                    </div>
+                `;
+                resultsCount.textContent = '0 cars found';
+                return;
+            }
+
+            resultsCount.textContent = `${cars.length} car${cars.length !== 1 ? 's' : ''} available`;
+
+            container.innerHTML = cars.map(car => `
+                <div class="car-card">
+                    <div class="car-image-container">
+                        <img src="${car.image}" alt="${car.name}" class="car-image"
+                             onerror="this.src='https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?w=400&h=250&fit=crop'">
+                        <div class="car-badge">${car.type}</div>
+                    </div>
+                    
+                    <div class="car-content">
+                        <div class="car-header">
+                            <h3 class="car-name">${car.name}</h3>
+                            <div class="car-price">$${car.price}<span style="font-size: 0.875rem; opacity: 0.8;">/day</span></div>
+                        </div>
+                        
+                        <div class="car-specs">
+                            <div class="spec-item">
+                                <span>👥</span>
+                                <span>${car.seats} seats</span>
+                            </div>
+                            <div class="spec-item">
+                                <span>⚡</span>
+                                <span>${car.transmission}</span>
+                            </div>
+                            <div class="spec-item">
+                                <span>⛽</span>
+                                <span>${car.fuel}</span>
+                            </div>
+                            <div class="spec-item">
+                                <span>🚗</span>
+                                <span>${car.type}</span>
+                            </div>
+                        </div>
+                        
+                        <div class="car-features">
+                            <span class="feature-tag">Full Insurance</span>
+                            <span class="feature-tag">24/7 Support</span>
+                            <span class="feature-tag">Free Cancellation</span>
+                        </div>
+                        
+                        <button onclick="bookCar('${car._id}')" class="book-btn">
+                            Book Now
+                        </button>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function filterCars() {
+            if (isLoading) return;
+            
+            const typeFilter = document.getElementById('typeFilter').value;
+            const priceFilter = document.getElementById('priceFilter').value;
+            const searchInput = document.getElementById('searchInput').value.toLowerCase();
+
+            let filteredCars = allCars.filter(car => {
+                const matchesType = !typeFilter || car.type === typeFilter;
+                const matchesSearch = !searchInput || car.name.toLowerCase().includes(searchInput);
                 
-                <div class="car-content">
-                    <div class="car-header">
-                        <h3 class="car-name">${car.name}</h3>
-                        <div class="car-price">$${car.price}<span style="font-size: 0.875rem; opacity: 0.8;">/day</span></div>
-                    </div>
-                    
-                    <div class="car-specs">
-                        <div class="spec-item">
-                            <span>👥</span>
-                            <span>${car.seats} seats</span>
-                        </div>
-                        <div class="spec-item">
-                            <span>⚡</span>
-                            <span>${car.transmission}</span>
-                        </div>
-                        <div class="spec-item">
-                            <span>⛽</span>
-                            <span>${car.fuel}</span>
-                        </div>
-                        <div class="spec-item">
-                            <span>🚗</span>
-                            <span>${car.type}</span>
-                        </div>
-                    </div>
-                    
-                    <div class="car-features">
-                        <span class="feature-tag">Full Insurance</span>
-                        <span class="feature-tag">24/7 Support</span>
-                        <span class="feature-tag">Free Cancellation</span>
-                    </div>
-                    
-                    <button onclick="bookCar('${car._id}')" class="book-btn">
-                        Book Now
-                    </button>
-                </div>
-            </div>
-        `).join('');
-    }
+                let matchesPrice = true;
+                if (priceFilter) {
+                    if (priceFilter === '0-50') matchesPrice = car.price <= 50;
+                    else if (priceFilter === '50-100') matchesPrice = car.price > 50 && car.price <= 100;
+                    else if (priceFilter === '100-150') matchesPrice = car.price > 100 && car.price <= 150;
+                    else if (priceFilter === '150+') matchesPrice = car.price > 150;
+                }
+                
+                return matchesType && matchesSearch && matchesPrice;
+            });
 
- 
-    function filterCars() {
-        if (isLoading) return;
-        
-        const typeFilter = document.getElementById('typeFilter').value;
-        const priceFilter = document.getElementById('priceFilter').value;
-        const searchInput = document.getElementById('searchInput').value.toLowerCase();
-
-        let filteredCars = allCars.filter(car => {
-            const matchesType = !typeFilter || car.type === typeFilter;
-            const matchesSearch = !searchInput || car.name.toLowerCase().includes(searchInput);
-            
-            let matchesPrice = true;
-            if (priceFilter) {
-                if (priceFilter === '0-50') matchesPrice = car.price <= 50;
-                else if (priceFilter === '50-100') matchesPrice = car.price > 50 && car.price <= 100;
-                else if (priceFilter === '100-150') matchesPrice = car.price > 100 && car.price <= 150;
-                else if (priceFilter === '150+') matchesPrice = car.price > 150;
-            }
-            
-            return matchesType && matchesSearch && matchesPrice;
-        });
-
-       
-        const sortValue = document.getElementById('sortFilter').value;
-        sortCars(filteredCars, sortValue);
-    }
-
-   
-    function sortCars(carsToSort = null, sortValue = null) {
-        if (isLoading) return;
-        
-        const sortBy = sortValue || document.getElementById('sortFilter').value;
-        const mobileSort = document.getElementById('mobileSort').value;
-        
-        
-        document.getElementById('sortFilter').value = sortBy;
-        document.getElementById('mobileSort').value = sortBy;
-
-        let cars = carsToSort || allCars;
-        
-        const sortedCars = [...cars].sort((a, b) => {
-            switch (sortBy) {
-                case 'name':
-                    return a.name.localeCompare(b.name);
-                case 'name-desc':
-                    return b.name.localeCompare(a.name);
-                case 'price':
-                    return a.price - b.price;
-                case 'price-desc':
-                    return b.price - a.price;
-                default:
-                    return 0;
-            }
-        });
-
-        displayCars(sortedCars);
-    }
-
-   
-    function bookCar(carId) {
-        localStorage.setItem('selectedCarId', carId);
-        
-        localStorage.removeItem('startDate');
-        localStorage.removeItem('endDate');
-        localStorage.removeItem('pickupLocation');
-        window.location.href = 'booking.html';
-    }
-
-    
-    function logout() {
-        localStorage.removeItem('token');
-        localStorage.removeItem('selectedCarId');
-        window.location.href = 'login.html';
-    }
-
-   
-    document.getElementById('searchInput').addEventListener('keypress', function(e) {
-        if (e.key === 'Enter') {
-            e.preventDefault();
-            filterCars();
+            const sortValue = document.getElementById('sortFilter').value;
+            sortCars(filteredCars, sortValue);
         }
-    });
-</script>
+
+        function sortCars(carsToSort = null, sortValue = null) {
+            if (isLoading) return;
+            
+            const sortBy = sortValue || document.getElementById('sortFilter').value;
+            const mobileSort = document.getElementById('mobileSort').value;
+            
+            document.getElementById('sortFilter').value = sortBy;
+            document.getElementById('mobileSort').value = sortBy;
+
+            let cars = carsToSort || allCars;
+            
+            const sortedCars = [...cars].sort((a, b) => {
+                switch (sortBy) {
+                    case 'name':
+                        return a.name.localeCompare(b.name);
+                    case 'name-desc':
+                        return b.name.localeCompare(a.name);
+                    case 'price':
+                        return a.price - b.price;
+                    case 'price-desc':
+                        return b.price - a.price;
+                    default:
+                        return 0;
+                }
+            });
+
+            displayCars(sortedCars);
+        }
+
+        function bookCar(carId) {
+            localStorage.setItem('selectedCarId', carId);
+            localStorage.removeItem('startDate');
+            localStorage.removeItem('endDate');
+            localStorage.removeItem('pickupLocation');
+            window.location.href = 'booking.html';
+        }
+
+        function logout() {
+            localStorage.removeItem('token');
+            localStorage.removeItem('selectedCarId');
+            window.location.href = 'login.html';
+        }
+
+        document.getElementById('searchInput').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                e.preventDefault();
+                filterCars();
+            }
+        });
+    </script>
 </body>
 </html>

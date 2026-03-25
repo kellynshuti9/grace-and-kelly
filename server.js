@@ -1,4 +1,3 @@
-
 const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
@@ -20,6 +19,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 const User = require('./backend/models/User');
 const Car = require('./backend/models/Car');
 const Booking = require('./backend/models/Booking');
+const Payment = require('./backend/models/Payment');
 
 // Auth Middleware
 const auth = async (req, res, next) => {
@@ -248,19 +248,21 @@ app.get('/booking', (req, res) => {
 app.get('/profile', (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'profile.html'));
 });
+
 app.get('/contact', (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'contact.html'));
 });
+
 app.get('/payment', (req, res) => { 
     res.sendFile(path.join(__dirname, 'public', 'payment.html'));
 });
 
+// Payment routes
 app.post('/api/payments/create-intent', auth, async (req, res) => {
     try {
         const { bookingId, amount } = req.body;
         
-       
-         const paymentIntent = {
+        const paymentIntent = {
             id: 'pi_' + Math.random().toString(36).substr(2, 9),
             client_secret: 'pi_' + Math.random().toString(36).substr(2, 24) + '_secret',
             amount: amount,
@@ -280,7 +282,6 @@ app.post('/api/payments/create-intent', auth, async (req, res) => {
     }
 });
 
-// Process payment
 app.post('/api/payments/process', auth, async (req, res) => {
     try {
         const { 
@@ -293,17 +294,13 @@ app.post('/api/payments/process', auth, async (req, res) => {
             amount 
         } = req.body;
 
-        // Validate payment details (basic validation for demo)
         if (!cardNumber || !expiryDate || !cvv || !cardholderName) {
             return res.status(400).json({ message: 'All payment fields are required' });
         }
 
-        // Simulate payment processing
-        // In real application, integrate with Stripe/PayPal here
-        const isPaymentSuccessful = Math.random() > 0.1; // 90% success rate for demo
+        const isPaymentSuccessful = Math.random() > 0.1;
 
         if (isPaymentSuccessful) {
-            // Update booking status
             const booking = await Booking.findById(bookingId);
             if (!booking) {
                 return res.status(404).json({ message: 'Booking not found' });
@@ -318,7 +315,6 @@ app.post('/api/payments/process', auth, async (req, res) => {
             booking.customerPhone = req.user.phone;
             await booking.save();
 
-            // Create payment record
             const payment = new Payment({
                 bookingId: bookingId,
                 userId: req.user.id,
@@ -354,7 +350,6 @@ app.post('/api/payments/process', auth, async (req, res) => {
     }
 });
 
-// Helper function to determine card brand
 function getCardBrand(cardNumber) {
     const firstDigit = cardNumber[0];
     if (firstDigit === '4') return 'Visa';
@@ -364,7 +359,6 @@ function getCardBrand(cardNumber) {
     return 'Unknown';
 }
 
-// Get payment history for user
 app.get('/api/payments/history', auth, async (req, res) => {
     try {
         const payments = await Payment.find({ userId: req.user.id })
@@ -381,19 +375,13 @@ const connectDB = async () => {
     try {
         await mongoose.connect(process.env.MONGO_URI);
         console.log('✅ MongoDB connected to Atlas');
-        
-        // Add sample cars
         await addSampleCars();
     } catch (err) {
         console.error('❌ MongoDB connection error:', err.message);
         process.exit(1);
     }
 };
-app.get('/payment', (req, res) => {
-    res.sendFile(path.join(__dirname, 'public', 'payment.html'));
-});
 
-// Add sample cars
 const addSampleCars = async () => {
     try {
         const count = await Car.countDocuments();
@@ -418,4 +406,4 @@ const addSampleCars = async () => {
 connectDB();
 
 const PORT = process.env.PORT || 5000;
-app.listen(PORT, () => console.log(`🚀 Server running on port ${PORT}`));
+app.listen(PORT, () => console.log(`🚀 Car Rental Server running on port ${PORT}`));

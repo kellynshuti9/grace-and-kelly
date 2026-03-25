@@ -3,77 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RideEase - Contact Us</title>
+    <title>Car Rental - Contact Us</title>
     <link rel="stylesheet" href="styles.css">
     <style>
-        :root {
-            --dark-blue: #0b1d51;
-            --white: #ffffff;
-            --light-gray: #f5f7fa;
-            --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
-            --shadow-md: 0 4px 8px rgba(0, 0, 0, 0.15);
-            --shadow-lg: 0 8px 25px rgba(0, 0, 0, 0.2);
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
         body { 
             font-family: 'Arial', sans-serif; 
-            background: var(--light-gray); 
-            color: var(--dark-blue); 
+            background: var(--dark-bg); 
+            color: var(--light-text); 
             min-height: 100vh;
             line-height: 1.6;
         }
 
-     /* ===== NAVBAR ===== */
-.professional-nav {
-    width: 100%;
-    background: white;
-    padding: 15px 0;
-    font-family: "Poppins", sans-serif;
-}
-
-/* ===== CONTAINER ===== */
-.nav-container {
-    max-width: 1300px;
-    margin: auto;
-    padding: 0 40px;
-
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-/* ===== BRAND ===== */
-.nav-brand {
-    display: flex;
-    align-items: center;
-    text-decoration: none;
-}
-
-.nav-logo {
-     width: 140px;   /* Big like your screenshot */
-    height: auto;
-    margin-right: 12px;
-}
-
-.brand-name {
-    font-size: 32px;  /* Bold + big (same as screenshot) */
-    font-weight: 700;
-    color: #06184A;
-    letter-spacing: 1.5px;
-}
-
-.brand-tagline {
-    font-size: 12px;  /* Small tagline, same style */
-    letter-spacing: 1.5px;
-    color: #4D5A80;
-}
-        /* Main Content */
         .container { 
             max-width: 1200px; 
             margin: 0 auto; 
@@ -88,13 +28,13 @@
         .page-header h1 {
             font-size: 3rem;
             margin-bottom: 1rem;
-            color: var(--dark-blue);
+            color: var(--light-text);
             font-weight: 700;
         }
 
         .page-header p {
             font-size: 1.2rem;
-            color: var(--dark-blue);
+            color: var(--light-text);
             opacity: 0.8;
             max-width: 600px;
             margin: 0 auto;
@@ -111,19 +51,21 @@
         .contact-form,
         .faq-section,
         .map-section {
-            background: var(--white);
+            background: var(--black);
             padding: 3rem;
             border-radius: 12px;
-            box-shadow: var(--shadow-sm);
-            border: 1px solid rgba(11, 29, 81, 0.1);
+            box-shadow: var(--shadow);
+            border: 1px solid var(--maroon);
         }
         
         .contact-info h2,
         .contact-form h2 {
-            color: var(--dark-blue);
+            color: var(--light-text);
             margin-bottom: 2rem;
             font-size: 1.8rem;
             font-weight: 600;
+            border-bottom: 2px solid var(--maroon);
+            padding-bottom: 0.5rem;
         }
         
         .info-item {
@@ -131,20 +73,20 @@
             align-items: flex-start;
             margin-bottom: 2rem;
             padding: 1.5rem;
-            background: var(--light-gray);
+            background: var(--dark-bg);
             border-radius: 8px;
             transition: all 0.3s ease;
-            border-left: 4px solid var(--dark-blue);
+            border-left: 4px solid var(--maroon);
         }
 
         .info-item:hover {
             transform: translateX(8px);
-            box-shadow: var(--shadow-sm);
+            box-shadow: var(--shadow);
         }
         
         .info-icon {
-            background: var(--dark-blue);
-            color: var(--white);
+            background: var(--maroon);
+            color: var(--light-text);
             width: 50px;
             height: 50px;
             border-radius: 50%;
@@ -158,18 +100,17 @@
         
         .info-content h3 {
             margin: 0 0 0.5rem 0;
-            color: var(--dark-blue);
+            color: var(--light-text);
             font-size: 1.1rem;
         }
 
         .info-content p {
             margin: 0;
-            color: var(--dark-blue);
+            color: var(--light-text);
             opacity: 0.8;
             line-height: 1.6;
         }
         
-        /* Contact Form */
         .form-group {
             margin-bottom: 1.5rem;
         }
@@ -178,7 +119,7 @@
             display: block;
             margin-bottom: 0.5rem;
             font-weight: 600;
-            color: var(--dark-blue);
+            color: var(--light-text);
         }
         
         .form-group input,
@@ -186,20 +127,20 @@
         .form-group select {
             width: 100%;
             padding: 1rem;
-            border: 2px solid #e1e5e9;
+            border: 2px solid var(--maroon);
             border-radius: 8px;
             font-size: 1rem;
             transition: all 0.3s ease;
-            background: var(--white);
-            color: var(--dark-blue);
+            background: var(--dark-bg);
+            color: var(--light-text);
         }
         
         .form-group input:focus,
         .form-group textarea:focus,
         .form-group select:focus {
             outline: none;
-            border-color: var(--dark-blue);
-            box-shadow: 0 0 0 3px rgba(11, 29, 81, 0.1);
+            border-color: var(--light-text);
+            box-shadow: 0 0 0 3px rgba(128, 0, 0, 0.2);
         }
         
         .form-group textarea {
@@ -208,8 +149,8 @@
         }
         
         .submit-btn {
-            background: var(--dark-blue);
-            color: var(--white);
+            background: var(--maroon);
+            color: var(--light-text);
             padding: 1rem 2rem;
             border: none;
             border-radius: 8px;
@@ -221,31 +162,33 @@
         }
         
         .submit-btn:hover {
-            background: #06123a;
+            background: #a00000;
             transform: translateY(-2px);
-            box-shadow: var(--shadow-md);
+            box-shadow: var(--shadow);
         }
         
-        /* FAQ Section */
         .faq-section {
             margin-top: 2rem;
         }
         
         .faq-section h2 {
-            color: var(--dark-blue);
+            color: var(--light-text);
             margin-bottom: 2rem;
             text-align: center;
             font-size: 1.8rem;
+            border-bottom: 2px solid var(--maroon);
+            display: inline-block;
+            padding-bottom: 0.5rem;
         }
         
         .faq-item {
-            border-bottom: 1px solid #e1e5e9;
+            border-bottom: 1px solid var(--gray-border);
             padding: 1.5rem 0;
         }
         
         .faq-question {
             font-weight: 600;
-            color: var(--dark-blue);
+            color: var(--light-text);
             cursor: pointer;
             display: flex;
             justify-content: space-between;
@@ -255,11 +198,11 @@
         }
 
         .faq-question:hover {
-            color: #06123a;
+            color: var(--maroon);
         }
         
         .faq-answer {
-            color: var(--dark-blue);
+            color: var(--light-text);
             opacity: 0.8;
             margin-top: 1rem;
             line-height: 1.6;
@@ -270,138 +213,30 @@
             display: block;
         }
         
-        /* Map Section */
         .map-section {
             margin-top: 3rem;
         }
         
         .map-section h2 {
-            color: var(--dark-blue);
+            color: var(--light-text);
             margin-bottom: 1.5rem;
             text-align: center;
         }
         
         .map-placeholder {
-            background: var(--light-gray);
+            background: var(--dark-bg);
             height: 300px;
             border-radius: 8px;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: var(--dark-blue);
+            color: var(--light-text);
             opacity: 0.7;
             font-size: 1.1rem;
-            border: 2px dashed rgba(11, 29, 81, 0.3);
-        }
-        
-        /* Professional Footer */
-        .professional-footer {
-            background: var(--dark-blue);
-            color: var(--white);
-            padding: 3rem 0 1rem;
-            margin-top: 4rem;
+            border: 2px dashed var(--maroon);
         }
 
-        .footer-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 2rem;
-            display: grid;
-            grid-template-columns: 2fr 1fr 1fr 1fr;
-            gap: 3rem;
-        }
-
-        .footer-brand img {
-            height: 40px;
-            width: auto;
-            margin-bottom: 1rem;
-        }
-
-        .footer-brand p {
-            color: rgba(255, 255, 255, 0.8);
-            line-height: 1.6;
-            margin-bottom: 1.5rem;
-        }
-
-        .footer-social {
-            display: flex;
-            gap: 1rem;
-        }
-
-        .social-icon {
-            background: var(--white);
-            color: var(--dark-blue);
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-decoration: none;
-            font-weight: bold;
-            transition: all 0.3s ease;
-        }
-
-        .social-icon:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(255, 255, 255, 0.2);
-        }
-
-        .footer-section h3 {
-            color: var(--white);
-            margin-bottom: 1.5rem;
-            font-size: 1.2rem;
-            font-weight: 600;
-        }
-
-        .footer-links {
-            list-style: none;
-        }
-
-        .footer-links li {
-            margin-bottom: 0.5rem;
-        }
-
-        .footer-links a {
-            color: rgba(255, 255, 255, 0.8);
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-
-        .footer-links a:hover {
-            color: var(--white);
-        }
-
-        .footer-contact p {
-            color: rgba(255, 255, 255, 0.8);
-            margin-bottom: 0.5rem;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .footer-bottom {
-            border-top: 1px solid rgba(255, 255, 255, 0.2);
-            margin-top: 3rem;
-            padding-top: 2rem;
-            text-align: center;
-            color: rgba(255, 255, 255, 0.7);
-        }
-
-        /* Responsive Design */
         @media (max-width: 768px) {
-            .nav-container {
-                flex-direction: column;
-                gap: 1rem;
-                padding: 1rem;
-            }
-
-            .nav-menu {
-                flex-wrap: wrap;
-                justify-content: center;
-                gap: 1rem;
-            }
-
             .container {
                 padding: 2rem 1rem;
             }
@@ -430,31 +265,12 @@
             .info-icon {
                 margin-right: 0;
                 margin-bottom: 1rem;
-            }
-
-            .footer-container {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-                text-align: center;
-            }
-
-            .footer-social {
-                justify-content: center;
+                margin-left: auto;
+                margin-right: auto;
             }
         }
 
         @media (max-width: 480px) {
-            .nav-menu {
-                flex-direction: column;
-                width: 100%;
-            }
-
-            .nav-link,
-            .nav-button {
-                width: 100%;
-                text-align: center;
-            }
-
             .page-header h1 {
                 font-size: 1.8rem;
             }
@@ -473,17 +289,17 @@
     <nav class="professional-nav">
         <div class="nav-container">
             <a href="home.html" class="nav-brand">
-                <img src="images/logo.svg" alt="RideEase" class="nav-logo">
+                <img src="images/logo.svg" alt="Car Rental" class="nav-logo">
                 <div class="brand-text">
-                    <div class="brand-name">RIDEASE</div>
-                    <div class="brand-tagline">PREMIUM CAR RENTAL</div>
+                    <div class="brand-name">CAR RENTAL</div>
+                    <div class="brand-tagline">PREMIUM CAR RENTAL SERVICE</div>
                 </div>
             </a>
             
             <div class="nav-menu">
-                <a href="home.html" class="nav-link active">Home</a>
+                <a href="home.html" class="nav-link">Home</a>
                 <a href="cars.html" class="nav-link">Browse Cars</a>
-                <a href="contact.html" class="nav-link">Contact</a>
+                <a href="contact.html" class="nav-link active">Contact</a>
                 <a href="profile.html" class="nav-link">Profile</a>
                 <button onclick="logout()" class="nav-button">Logout</button>
             </div>
@@ -504,7 +320,7 @@
                     <div class="info-icon">📍</div>
                     <div class="info-content">
                         <h3>Visit Our Office</h3>
-                        <p>123 Car Rental Street<br>KIGALI CITY<br>RWANDA</p>
+                        <p>123 Car Rental Street<br>Kigali City<br>Rwanda</p>
                     </div>
                 </div>
                 
@@ -512,7 +328,7 @@
                     <div class="info-icon">📞</div>
                     <div class="info-content">
                         <h3>Call Us</h3>
-                        <p>(+250) 794098499-RIDE<br>Support: (+250) 783583486-HELP<br>Mon-Fri: 8AM-8PM, Sat-Sun: 9AM-6PM</p>
+                        <p>(+250) 794 098 499<br>Support: (+250) 783 583 486<br>Mon-Fri: 8AM-8PM, Sat-Sun: 9AM-6PM</p>
                     </div>
                 </div>
                 
@@ -520,7 +336,7 @@
                     <div class="info-icon">✉️</div>
                     <div class="info-content">
                         <h3>Email Us</h3>
-                        <p>General: dushimimananshutikelly@gmail.com<br>Support: rideease@gmail.com<br>Bookings: bookingsrideease@gmail.com</p>
+                        <p>General: info@carrental.com<br>Support: support@carrental.com<br>Bookings: bookings@carrental.com</p>
                     </div>
                 </div>
                 
@@ -574,7 +390,7 @@
             </div>
         </div>
 
-        <div class="faq-section">
+        <div class="faq-section" style="text-align: center;">
             <h2>Frequently Asked Questions</h2>
             
             <div class="faq-item">
@@ -603,7 +419,7 @@
                     <span>+</span>
                 </div>
                 <div class="faq-answer">
-                    Yes! We provide 24/7 roadside assistance for all our rentals. Just call our emergency hotline at +1 (555) 123-HELP.
+                    Yes! We provide 24/7 roadside assistance for all our rentals. Just call our emergency hotline at +250 794 098 499.
                 </div>
             </div>
             
@@ -622,16 +438,15 @@
             <h2>Find Our Locations</h2>
             <div class="map-placeholder">
                 📍 Interactive Map - Our Office Locations
-                <!-- In a real application, you would embed Google Maps here -->
             </div>
         </div>
     </div>
 
-       <!-- Professional Footer -->
+    <!-- Professional Footer -->
     <footer class="professional-footer">
         <div class="footer-container">
             <div class="footer-brand">
-                <img src="images/logo.svg" alt="RideEase">
+                <img src="images/logo.svg" alt="Car Rental">
                 <p>Your trusted partner for premium car rentals. Experience excellence in every journey.</p>
                 <div class="footer-social">
                     <a href="#" class="social-icon">f</a>
@@ -664,19 +479,18 @@
             <div class="footer-section">
                 <h3>Contact Info</h3>
                 <div class="footer-contact">
-                    <p>📞 +250794098499-RIDE</p>
-                    <p>✉️ info@ridease.com</p>
-                    <p>📍  KIGALI-RWANDA</p>
+                    <p>📞 +250 794 098 499</p>
+                    <p>✉️ info@carrental.com</p>
+                    <p>📍 Kigali, Rwanda</p>
                     <p>🕒 24/7 Service</p>
                 </div>
             </div>
         </div>
         
         <div class="footer-bottom">
-            <p>&copy; 2025 RideEase. All rights reserved.</p>
+            <p>&copy; 2025 Car Rental. All rights reserved.</p>
         </div>
     </footer>
- 
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
@@ -695,13 +509,11 @@
             const faqItem = element.parentElement;
             const isActive = faqItem.classList.contains('active');
             
-            // Close all FAQ items
             document.querySelectorAll('.faq-item').forEach(item => {
                 item.classList.remove('active');
                 item.querySelector('.faq-question span').textContent = '+';
             });
             
-            // Open clicked item if it wasn't active
             if (!isActive) {
                 faqItem.classList.add('active');
                 element.querySelector('span').textContent = '−';
@@ -719,15 +531,11 @@
                 message: document.getElementById('message').value
             };
             
-            // In a real application, you would send this to your backend
             console.log('Contact form submitted:', formData);
             
-            // Show success message
             alert('Thank you for your message! We will get back to you within 24 hours.');
-            
-            // Reset form
             this.reset();
         });
     </script>
 </body>
-</html> 
+</html>
